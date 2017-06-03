@@ -1,0 +1,8 @@
+<h3>Title: <%= @post.title %></h3>
+
+<p>
+  <%= @post.content %>
+</p>
+
+<%= link_to "Edit", edit_post_path(@post) %> |
+<%= link_to "Delete", post_path(@post), method: "delete" %>
