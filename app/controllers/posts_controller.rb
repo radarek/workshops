@@ -12,6 +12,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
+
     if @post.save
       flash[:notice] = "Post created successfuly"
       redirect_to action: "index"
@@ -43,7 +45,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params[:post].permit(:title, :content)
+    params[:post].permit(:title, :content, :category_id)
   end
 
   def fetch_post

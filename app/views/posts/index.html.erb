@@ -3,6 +3,7 @@
 <% @posts.each do |post| %>
   <div>
     <h3><%= link_to "Title #{post.title}", post_path(post) %></h3>
-    created <%= time_ago_in_words(post.created_at) %> ago
+    created <%= time_ago_in_words(post.created_at) %> ago,
+    created by <%= post.user.email %>
   </div>
 <% end %>

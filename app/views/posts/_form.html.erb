@@ -18,6 +18,11 @@
   </p>
 
   <p>
+    <%= f.label :category %><br>
+    <%= f.select :category_id, Category.all.map { |c| [c.name, c.id] } %>
+  </p>
+
+  <p>
     <%= f.submit "Save" %>
   </p>
 <% end %>
